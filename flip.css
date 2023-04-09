@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrapper {
+	display: flex;
+	gap: 20px;
+    width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+    background-color: rgb(177, 44, 135);
+    background-image: linear-gradient(to bottom, #21b7e9, #3ed237);
+
+}
+
+.card {
+	position: relative;
+	width: 350px;
+	height: 350px;
+}
+
+.face {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: .5s;
+}
+
+.card .front {
+	transform: perspective(600px) rotateY(0deg);
+	box-shadow: 0 5px 10px rgb(248, 246, 246);
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Or any other height you want */
+    object-fit: contain;
+  /* Optional: Add these properties to center the image vertically and horizontally */
+    display: block;
+    margin: none;
+    object-fit: cover;
+
+}
+.text-h1 {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	color: #fff;
+	background: rgba(168, 251, 254, 0.4);
+	text-align: center;
+}
+
+.card .back {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transform: perspective(600px) rotateY(180deg);
+	background: rgb(26, 28, 27);
+	padding: 15px;
+	color: rgb(131, 206, 234);
+	text-align: center;
+	box-shadow: 0 5px 10px #fff;
+}
+
+.text-p {
+font-family: 'Times New Roman', Times, serif;
+}
+
+.links {
+	border-top: 1px solid rgb(182, 48, 169);
+	height: 50px;
+	line-height: 50px;
+}
+
+.link-a {
+	color: rgba(86, 199, 120);
+}
+
+.card .back .text-h2 {
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+
+.card .back .text-p {
+	letter-spacing: 1px;
+}
+
+.card:hover .front {
+	transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+	transform: perspective(600px) rotateY(360deg);
+}
+
+@media (max-width: 500px), (max-width: 1200px) and (min-width: 768px) {
+
+    .wrapper {
+        flex-direction: column;
+        gap: 20px;
+        }
+
+        .card {
+        width: 90%;
+        height: 300px;
+        }
+
+        .text-h1 {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        }
+
+        .links {
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        }
+
+        .card .back .text-h2 {
+        font-size: 24px;
+        }
+
+        .card .back .text-p {
+        font-size: 12px;
+        }
+}
